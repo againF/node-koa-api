@@ -1,6 +1,4 @@
 const Koa = require('koa');
-const { nextTick } = require('process');
-
 const app = new Koa();
 
 function test(ctx,next) {
