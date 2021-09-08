@@ -1,15 +1,15 @@
 const Koa = require('koa');
 const app = new Koa();
 
-function test(ctx,next) {
-    console.log('hello Alan');
-    next();
-}
-
-app.use(test)
-app.use((ctx, next) => {
-    console.log('hello wu');
-    next();
+app.use(async (ctx, next) => {
+    console.log('1');
+    await next();
+    console.log('2');
+})
+app.use(async (ctx, next) => {
+    console.log('3');
+    await next();
+    console.log('4');
 })
 app.listen(3000)
 console.log('listen 3000');
